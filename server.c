@@ -14,7 +14,6 @@ void listen_ (){
 	
 	char buf[20];
 	for(int i=0; i<5; i){
-		// printf("1");
 		recvfrom(fd, buf, sizeof(buf), 0, (struct sockaddr*)&client_sock_addr, &add);
 		printf("\n[client]: %s\n", buf);
 		// printf("[server]: >> ");
@@ -29,8 +28,8 @@ void type(){
 	for(int i=0; i<5; i){
 		char buf[100];
 		printf("[server]: >> ");
-		scanf("%s", buf);
-		if(strcmp(buf, "/quit") == 0){
+		fgets(buf, 100, stdin);
+		if(strcmp(buf, "/quit\n") == 0){
 			close(fd);
 			exit(0);
 		}else{

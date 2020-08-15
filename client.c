@@ -26,8 +26,8 @@ void type(){
 
 	for(int i=0; i<5; i){
 		printf("[client]: >> ");
-		scanf("%s", buf);
-		if(strcmp(buf, "/quit") == 0){
+		fgets(buf, 100, stdin);
+		if(strcmp(buf, "/quit\n") == 0){
 			close(fd);
 			exit(0);
 		}else{
