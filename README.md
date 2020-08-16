@@ -2,6 +2,10 @@
 
 This is a server client based messaging application.
 
+## Dependencies
+
+This application uses ncurses for a better user interface. Make sure ncurses is installed on your system.
+
 ## Compile
 
     make
